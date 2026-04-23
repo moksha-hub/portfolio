@@ -22,6 +22,19 @@ export type RepositoryItem = {
   link: string
 }
 
+export type Signal = {
+  label: string
+  value: string
+  note: string
+}
+
+export type SkillGroup = {
+  title: string
+  eyebrow: string
+  summary: string
+  items: string[]
+}
+
 export const profile = {
   name: 'Mokshagna K',
   role: 'Full-Stack, ML, and Systems Builder',
@@ -30,17 +43,24 @@ export const profile = {
   phone: '(+91) 9573323265',
   linkedin: 'https://linkedin.com/in/mokshagnak',
   github: 'https://github.com/moksha-hub',
-  heroTitle: 'Designing software that feels premium and performs with intent.',
+  heroTitle: 'Designing software that feels premium, intelligent, and production-ready.',
   heroCopy:
-    'Computer Science student building across intelligent systems, modern web apps, and research-led ML products. I care about interface quality, product sharpness, and shipping things that feel more finished than expected.',
+    'Computer Science student building across intelligent systems, modern web apps, and research-led ML products. I care about interface quality, product sharpness, and shipping work that feels considered from architecture to motion.',
   badge: 'Open Source / Full Stack / Applied ML',
+  availability: 'Open for internships, collaborations, and high-conviction product work.',
 }
 
 export const metrics: Metric[] = [
   { label: 'Graduation', value: '2027', note: 'B.Tech CSE at Amrita Vishwa Vidyapeetham' },
-  { label: 'Featured domains', value: '6+', note: 'ML, OCR, full-stack, OSS, systems, RAG' },
+  { label: 'Featured domains', value: '6+', note: 'ML, OCR, full-stack, OSS, systems, and RAG' },
   { label: 'Primary stacks', value: 'React / TS / Python', note: 'With Rust, Node.js, FastAPI, and data tooling' },
   { label: 'Execution mode', value: 'Build + Research', note: 'From interface polish to model-backed workflows' },
+]
+
+export const heroSignals: Signal[] = [
+  { label: 'Current focus', value: 'AI products', note: 'Applied ML systems with strong UX quality' },
+  { label: 'Build style', value: 'High polish', note: 'Design-conscious engineering with implementation depth' },
+  { label: 'Operating lane', value: 'Frontend × ML', note: 'Bridging product experience and technical rigor' },
 ]
 
 export const featuredProjects: FeaturedProject[] = [
@@ -144,10 +164,41 @@ export const experience = [
   },
 ]
 
-export const skills = {
-  languages: ['Python', 'C', 'C++', 'SQL', 'TypeScript', 'JavaScript', 'Rust'],
-  frontend: ['React', 'HTML5', 'CSS', 'Tailwind-oriented UI work', 'Component architecture'],
-  backend: ['Node.js', 'FastAPI', 'REST APIs', 'JWT auth', 'Appwrite', 'Hono'],
-  ml: ['NLP preprocessing', 'TF-IDF', 'Logistic Regression', 'Naive Bayes', 'SVM', 'Random Forest', 'CNN', 'RAG pipelines'],
-  data: ['MongoDB', 'MySQL', 'NoSQL principles', 'Evaluation metrics', 'Inference APIs'],
-}
+export const skillGroups: SkillGroup[] = [
+  {
+    title: 'Languages',
+    eyebrow: 'Core foundation',
+    summary: 'Comfortable across systems-oriented, scripting, and product-facing languages.',
+    items: ['Python', 'C', 'C++', 'SQL', 'TypeScript', 'JavaScript', 'Rust'],
+  },
+  {
+    title: 'Frontend',
+    eyebrow: 'Interface systems',
+    summary: 'Modern React-based UI work with attention to polish, composition, and clarity.',
+    items: ['React', 'HTML5', 'CSS', 'Tailwind-oriented UI work', 'Component architecture'],
+  },
+  {
+    title: 'Backend',
+    eyebrow: 'Application logic',
+    summary: 'Product backend development focused on APIs, auth, and operational reliability.',
+    items: ['Node.js', 'FastAPI', 'REST APIs', 'JWT auth', 'Appwrite', 'Hono'],
+  },
+  {
+    title: 'Machine Learning',
+    eyebrow: 'Applied intelligence',
+    summary: 'Practical ML pipeline work spanning NLP, ranking, classical models, and deep learning.',
+    items: ['NLP preprocessing', 'TF-IDF', 'Logistic Regression', 'Naive Bayes', 'SVM', 'Random Forest', 'CNN', 'RAG pipelines'],
+  },
+  {
+    title: 'Data & Evaluation',
+    eyebrow: 'Decision support',
+    summary: 'Data-layer understanding that supports experimentation, inference delivery, and measurement.',
+    items: ['MongoDB', 'MySQL', 'NoSQL principles', 'Evaluation metrics', 'Inference APIs'],
+  },
+]
+
+export const capabilityHighlights = [
+  'Builds product-quality interfaces without losing engineering depth',
+  'Comfortable moving from ML experimentation to deployable full-stack systems',
+  'Interested in systems, agent tooling, and AI-native product experiences',
+]
