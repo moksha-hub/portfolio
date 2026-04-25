@@ -9,38 +9,68 @@ import {
 } from '../data/portfolio'
 
 const fadeUp = {
-  initial: { opacity: 0, y: 26 },
+  initial: { opacity: 0, y: 32 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
 }
 
 const orbitCards = [
-  { label: 'Primary lane', value: 'Full-stack products', note: 'Clean interfaces backed by real implementation depth' },
-  { label: 'Systems edge', value: 'AI + infra curiosity', note: 'Interest in runtimes, tooling, and modern developer workflows' },
-  { label: 'Build mindset', value: 'Ship thoughtfully', note: 'Strong attention to product sharpness, clarity, and execution' },
+  { label: 'Product', value: 'Premium interfaces', note: 'Deliberate UI systems with clarity, pace, and strong visual taste' },
+  { label: 'Engineering', value: 'Full-stack execution', note: 'Frontend, backend, and delivery-minded implementation across real builds' },
+  { label: 'Intelligence', value: 'Applied ML systems', note: 'RAG, OCR, ranking, and model-backed product workflows' },
 ]
 
 function PremiumOrbital() {
   return (
-    <div className="orbital-stage" aria-hidden="true">
-      <div className="orbital-core">
+    <motion.div
+      className="orbital-stage"
+      aria-hidden="true"
+      initial={{ opacity: 0, scale: 0.96, rotate: -4 }}
+      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+      transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <motion.div
+        className="orbital-grid"
+        animate={{ y: [-6, 6, -6] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="orbital-core"
+        animate={{ y: [0, -10, 0], boxShadow: ['0 18px 40px rgba(0,0,0,0.24)', '0 28px 60px rgba(0,0,0,0.34)', '0 18px 40px rgba(0,0,0,0.24)'] }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+      >
         <span className="eyebrow">Signature profile</span>
         <strong>Mokshagna K</strong>
         <p>Full-stack engineering, applied ML, and systems-minded execution in one focused portfolio.</p>
-      </div>
-      <div className="orbital-ring orbital-ring-one" />
-      <div className="orbital-ring orbital-ring-two" />
+      </motion.div>
+      <motion.div
+        className="orbital-ring orbital-ring-one"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 26, repeat: Infinity, ease: 'linear' }}
+      />
+      <motion.div
+        className="orbital-ring orbital-ring-two"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 34, repeat: Infinity, ease: 'linear' }}
+      />
       <div className="orbital-glow orbital-glow-one" />
       <div className="orbital-glow orbital-glow-two" />
       {orbitCards.map((card, index) => (
-        <div key={card.label} className={`orbit-card orbit-card-${index + 1} glass-panel`}>
+        <motion.div
+          key={card.label}
+          className={`orbit-card orbit-card-${index + 1} glass-panel`}
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.22 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+          whileHover={{ y: -6, scale: 1.02 }}
+        >
           <span>{card.label}</span>
           <strong>{card.value}</strong>
           <p>{card.note}</p>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   )
 }
 
@@ -51,8 +81,8 @@ export function HomePage() {
         <motion.div
           className="hero-copy premium-panel hero-copy-premium"
           variants={{
-            initial: { opacity: 0, y: 26 },
-            animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+            initial: { opacity: 0, y: 32 },
+            animate: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } },
           }}
         >
           <span className="pill">{profile.badge}</span>
@@ -70,34 +100,34 @@ export function HomePage() {
           </div>
 
           <div className="hero-meta-grid">
-            <div className="hero-meta-card glass-panel">
+            <motion.div className="hero-meta-card glass-panel" whileHover={{ y: -4 }}>
               <span className="eyebrow">Location</span>
               <strong>{profile.location}</strong>
-            </div>
-            <div className="hero-meta-card glass-panel">
+            </motion.div>
+            <motion.div className="hero-meta-card glass-panel" whileHover={{ y: -4 }}>
               <span className="eyebrow">Availability</span>
               <strong>{profile.availability}</strong>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
         <motion.div
           className="hero-visual premium-panel hero-visual-premium"
           variants={{
-            initial: { opacity: 0, y: 34, scale: 0.985 },
+            initial: { opacity: 0, y: 42, scale: 0.985 },
             animate: {
               opacity: 1,
               y: 0,
               scale: 1,
-              transition: { duration: 0.92, delay: 0.08, ease: [0.22, 1, 0.36, 1] },
+              transition: { duration: 1.05, delay: 0.08, ease: [0.22, 1, 0.36, 1] },
             },
           }}
         >
           <div className="hero-visual-copy hero-visual-header">
             <div>
               <span className="eyebrow">Premium direction</span>
-              <strong>Sharper than the reference</strong>
-              <p>Cleaner hierarchy, editorial spacing, and a stronger premium tech aesthetic.</p>
+              <strong>Simple, dynamic, and sharper</strong>
+              <p>Inspired by the reference, but cleaner, more animated, and more robust in presentation.</p>
             </div>
             <div className="status-pill">Open</div>
           </div>
@@ -112,8 +142,9 @@ export function HomePage() {
             className="metric-card glass-panel"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -6 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.5, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.55, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="eyebrow">{metric.label}</span>
             <strong>{metric.value}</strong>
@@ -124,16 +155,24 @@ export function HomePage() {
 
       <motion.section className="section-frame signature-band" {...fadeUp}>
         <div className="section-heading compact">
-          <span className="eyebrow">Why this direction works</span>
-          <h2>A portfolio framed like a premium product brand, not a generic student template.</h2>
+          <span className="eyebrow">Value proposition</span>
+          <h2>A stronger portfolio story with better motion, cleaner hierarchy, and clearer signals.</h2>
         </div>
         <div className="hero-proof-grid signature-grid">
-          {heroSignals.map((signal) => (
-            <div key={signal.label} className="proof-tile glass-panel proof-tile-premium">
+          {heroSignals.map((signal, index) => (
+            <motion.div
+              key={signal.label}
+              className="proof-tile glass-panel proof-tile-premium"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
+            >
               <span>{signal.label}</span>
               <strong>{signal.value}</strong>
               <p>{signal.note}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.section>
@@ -142,11 +181,11 @@ export function HomePage() {
         <div className="section-heading section-header-row">
           <div>
             <span className="eyebrow">Selected work</span>
-            <h2>Projects presented as flagship case-study signals.</h2>
+            <h2>Projects presented as flagship proof of product quality and technical range.</h2>
           </div>
           <p>
-            The strongest work is given more space, clearer hierarchy, and language that emphasizes
-            product thinking, technical depth, and shipped outcomes.
+            The layout now feels more editorial and premium while keeping the project story direct,
+            credible, and easy to scan.
           </p>
         </div>
         <div className="project-grid featured-project-grid">
@@ -154,10 +193,11 @@ export function HomePage() {
             <motion.article
               key={project.name}
               className="project-card glass-panel project-card-premium"
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -8 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.58, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="project-card-top">
                 <span className="project-category">{project.category}</span>
@@ -182,22 +222,21 @@ export function HomePage() {
       <motion.section className="section-frame credibility-strip" {...fadeUp}>
         <div className="section-heading compact">
           <span className="eyebrow">Positioning</span>
-          <h2>Interface quality, backend range, and applied ML capability working together.</h2>
+          <h2>Product sense, engineering depth, and ML capability working together.</h2>
         </div>
         <div className="credibility-card glass-panel credibility-card-premium">
           <div>
             <span className="eyebrow">Profile thesis</span>
             <p>
-              The key signal is range with taste. This portfolio intentionally shows the ability to
-              build polished frontend experiences while still going deep on backend logic, ML workflows,
-              and systems-oriented experimentation.
+              The strongest signal is not just breadth. It is the ability to make ambitious technical
+              work feel polished, clear, and intentionally designed.
             </p>
           </div>
           <div>
             <span className="eyebrow">Best fit</span>
             <p>
-              Product teams, startups, and engineering environments looking for someone who can bridge
-              implementation, interface quality, and intelligent features.
+              Teams looking for a builder who can move across frontend quality, backend systems,
+              applied ML, and product execution with strong taste.
             </p>
           </div>
         </div>
@@ -207,9 +246,9 @@ export function HomePage() {
         <div className="section-heading section-header-row compact">
           <div>
             <span className="eyebrow">Extended work</span>
-            <h2>A broader repository surface that supports the core narrative.</h2>
+            <h2>A wider GitHub surface that supports the main premium narrative.</h2>
           </div>
-          <p>Secondary projects reinforce range without competing with the flagship work above.</p>
+          <p>Secondary repositories now read as supporting credibility signals instead of visual clutter.</p>
         </div>
         <div className="repo-grid compact-repo-grid">
           {repositories.map((repo, index) => (
@@ -219,10 +258,11 @@ export function HomePage() {
               target="_blank"
               rel="noreferrer"
               className="repo-card glass-panel repo-card-premium"
-              initial={{ opacity: 0, y: 22 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -6 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.48, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="repo-topline">
                 <span>{repo.category}</span>
@@ -238,15 +278,22 @@ export function HomePage() {
       <motion.section className="section-frame dual-layout" id="experience" {...fadeUp}>
         <div className="section-heading compact">
           <span className="eyebrow">Foundation</span>
-          <h2>Academic training and ML experimentation behind the current product direction.</h2>
+          <h2>Academic grounding and ML experimentation behind the product-facing work.</h2>
         </div>
         <div className="timeline glass-panel timeline-premium">
-          {experience.map((item) => (
-            <article key={item.title} className="timeline-item">
+          {experience.map((item, index) => (
+            <motion.article
+              key={item.title}
+              className="timeline-item"
+              initial={{ opacity: 0, x: -18 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+            >
               <span>{item.period}</span>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </motion.section>

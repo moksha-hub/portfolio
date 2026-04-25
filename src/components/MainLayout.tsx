@@ -13,7 +13,7 @@ export function MainLayout() {
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
       <div className="ambient ambient-three" />
-      <header className="topbar topbar-premium glass-panel">
+      <header className="topbar topbar-premium glass-panel" role="banner">
         <NavLink to="/" className="brand-lockup" aria-label="Go to homepage">
           <span className="brand-mark">MK</span>
           <span>
