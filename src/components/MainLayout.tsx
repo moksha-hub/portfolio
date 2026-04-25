@@ -9,11 +9,11 @@ const homeLinks = [
 
 export function MainLayout() {
   return (
-    <div className="page-shell">
+    <div className="page-shell premium-shell">
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />
       <div className="ambient ambient-three" />
-      <header className="topbar glass-panel">
+      <header className="topbar topbar-premium glass-panel">
         <NavLink to="/" className="brand-lockup" aria-label="Go to homepage">
           <span className="brand-mark">MK</span>
           <span>

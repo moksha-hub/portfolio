@@ -3,24 +3,25 @@ import { capabilityHighlights, profile, skillGroups } from '../data/portfolio'
 
 export function SkillsPage() {
   return (
-    <div className="page-stack skills-page-shell">
+    <div className="page-stack skills-page-shell skills-page-premium">
       <motion.section
-        className="skills-hero premium-panel"
+        className="skills-hero premium-panel skills-hero-premium"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="skills-hero-copy">
-          <span className="pill">Capability dashboard</span>
+          <span className="pill">Capability profile</span>
           <p className="eyebrow">/skills</p>
-          <h1>Capability depth with product taste, technical range, and build discipline.</h1>
+          <h1>Capability depth framed with stronger hierarchy and a cleaner premium presentation.</h1>
           <p className="hero-text">
-            A cleaner breakdown of the tools, systems, and delivery strengths behind the portfolio.
-            This page is designed to read more like a premium capability dashboard than a typical skill list.
+            This page turns the skill inventory into a more editorial capability overview, making the
+            technical stack feel intentional, credible, and easier to scan.
           </p>
         </div>
-        <div className="skills-hero-panel glass-panel">
+        <div className="skills-hero-panel glass-panel skills-hero-panel-premium">
           <span className="eyebrow">High-confidence strengths</span>
+          <strong>{profile.role}</strong>
           <ul className="highlight-list">
             {capabilityHighlights.map((item) => (
               <li key={item}>{item}</li>
@@ -38,18 +39,18 @@ export function SkillsPage() {
       >
         <article className="glass-panel overview-card">
           <span className="eyebrow">Build profile</span>
-          <strong>{profile.role}</strong>
+          <strong>Execution-minded engineer</strong>
           <p>
-            Best when working across product-facing interfaces, ML-backed workflows, and the system
-            details that make ambitious projects feel production-ready.
+            Best when working across polished interfaces, dependable backend systems, and AI-backed
+            workflows that need both technical rigor and clear product thinking.
           </p>
         </article>
         <article className="glass-panel overview-card">
-          <span className="eyebrow">What stands out</span>
-          <strong>Interface + intelligence</strong>
+          <span className="eyebrow">What differentiates me</span>
+          <strong>Product taste + technical range</strong>
           <p>
-            The differentiator is not just technical breadth. It is combining thoughtful UX and real
-            implementation depth in the same workflow.
+            The differentiator is not only breadth. It is the ability to combine interface sensitivity,
+            implementation depth, and intelligent system building in the same workflow.
           </p>
         </article>
       </motion.section>
@@ -58,7 +59,7 @@ export function SkillsPage() {
         {skillGroups.map((group, index) => (
           <motion.article
             key={group.title}
-            className="skill-showcase glass-panel"
+            className="skill-showcase glass-panel skill-showcase-premium"
             initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -71,7 +72,7 @@ export function SkillsPage() {
               </div>
               <p>{group.summary}</p>
             </div>
-            <div className="tag-cloud">
+            <div className="tag-cloud tag-cloud-premium">
               {group.items.map((item) => (
                 <span key={item}>{item}</span>
               ))}
