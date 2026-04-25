@@ -35,6 +35,18 @@ export type SkillGroup = {
   items: string[]
 }
 
+export type AboutParagraph = {
+  lead?: boolean
+  text: string
+}
+
+export type ExperienceItem = {
+  company: string
+  role: string
+  period: string
+  points: string[]
+}
+
 export const profile = {
   name: 'Mokshagna K',
   role: 'Full-Stack Engineer · Applied ML Builder · Systems-Focused Developer',
@@ -43,24 +55,48 @@ export const profile = {
   phone: '(+91) 9573323265',
   linkedin: 'https://linkedin.com/in/mokshagnak',
   github: 'https://github.com/moksha-hub',
-  heroTitle: 'Building premium digital products with engineering depth and AI-native thinking.',
+  heroTitle: 'Building simple, premium digital products with engineering depth and AI-native thinking.',
   heroCopy:
-    'I am a Computer Science student focused on full-stack engineering, applied machine learning, and modern product execution. My work sits at the intersection of polished interfaces, strong backend foundations, and intelligent systems that feel considered, useful, and ready for real users.',
+    'I am a Computer Science student building across full-stack engineering, applied machine learning, and systems-focused product work. I care about clean interfaces, strong implementation, and software that feels thoughtful from architecture to user experience.',
   badge: 'Open Source · Full Stack · Applied ML',
   availability: 'Open to internships, collaborations, and product teams that value execution quality.',
 }
 
 export const metrics: Metric[] = [
   { label: 'Graduation', value: '2027', note: 'B.Tech in Computer Science Engineering at Amrita Vishwa Vidyapeetham' },
-  { label: 'Focus areas', value: 'Full Stack + ML', note: 'Interfaces, backend systems, OCR, RAG, and AI tooling' },
-  { label: 'Core stack', value: 'React / TS / Python', note: 'Extended with Rust, Node.js, FastAPI, MongoDB, and Appwrite' },
-  { label: 'Execution style', value: 'Product + Systems', note: 'Strong UX framing with implementation depth and shipping bias' },
+  { label: 'Focus', value: 'Full Stack + ML', note: 'Interfaces, backend systems, OCR, RAG, and AI tooling' },
+  { label: 'Primary stack', value: 'React / TS / Python', note: 'Extended with Rust, Node.js, FastAPI, MongoDB, and Appwrite' },
+  { label: 'Build style', value: 'Product + Systems', note: 'Clear UX framing with implementation depth and shipping bias' },
 ]
 
 export const heroSignals: Signal[] = [
-  { label: 'Current lane', value: 'AI-native products', note: 'Building intelligent workflows with clean product surfaces' },
-  { label: 'Working style', value: 'High-conviction execution', note: 'Premium visual quality paired with real technical substance' },
-  { label: 'Edge', value: 'Frontend × ML × systems', note: 'Comfortable moving across UX, architecture, and model-driven features' },
+  { label: 'Current lane', value: 'AI-native products', note: 'Building intelligent workflows with cleaner product surfaces' },
+  { label: 'Working style', value: 'High-conviction execution', note: 'Simple presentation with technical substance underneath' },
+  { label: 'Edge', value: 'Frontend × ML × systems', note: 'Comfortable moving across UI, backend architecture, and model-backed features' },
+]
+
+export const aboutParagraphs: AboutParagraph[] = [
+  {
+    lead: true,
+    text: 'I am a Computer Science student at Amrita Vishwa Vidyapeetham, building a portfolio around full-stack products, applied ML systems, and software that feels clean, deliberate, and useful.',
+  },
+  {
+    text: 'My strongest work sits at the intersection of polished interface design, dependable backend implementation, and intelligent workflows such as RAG, OCR, and model-backed decision systems.',
+  },
+  {
+    text: 'I am especially interested in product-minded engineering roles where simplicity, quality, and technical depth all matter at the same time.',
+  },
+]
+
+export const aboutTech = [
+  'React',
+  'TypeScript',
+  'Python',
+  'FastAPI',
+  'Node.js',
+  'Rust',
+  'MongoDB',
+  'RAG systems',
 ]
 
 export const featuredProjects: FeaturedProject[] = [
@@ -88,25 +124,22 @@ export const featuredProjects: FeaturedProject[] = [
     name: 'Ticket Prioritizer',
     tagline: 'ML-powered support operations platform for smarter triage',
     description:
-      'An end-to-end product for ticket management with NLP preprocessing, multiple classification models, admin analytics, and secure full-stack workflows.',
+      'An end-to-end product for ticket management with NLP preprocessing, classification models, admin analytics, and secure full-stack workflows.',
     stack: ['React', 'Node.js', 'MongoDB', 'JWT', 'ML'],
     impact: 'Combines UI execution, backend architecture, and applied ML inside one cohesive product surface.',
     link: 'https://github.com/moksha-hub/Ticket-prioritizes',
     category: 'Full Stack / ML',
   },
-  {
-    name: 'Atlassian Issue Tracker Clone',
-    tagline: 'Collaborative issue management with modern TypeScript architecture',
-    description:
-      'A realtime project workflow product built around collaborative team execution, structured issue tracking, and a modern developer-focused stack.',
-    stack: ['TypeScript', 'Appwrite', 'Hono', 'Realtime'],
-    impact: 'Signals product recreation skill, scalable frontend architecture, and strong web implementation fundamentals.',
-    link: 'https://github.com/moksha-hub/Atlassian-issue-Tracker-clone',
-    category: 'Full Stack',
-  },
 ]
 
 export const repositories: RepositoryItem[] = [
+  {
+    name: 'Atlassian Issue Tracker Clone',
+    category: 'Full Stack',
+    language: 'TypeScript',
+    description: 'Collaborative issue management product with realtime workflows and modern architecture.',
+    link: 'https://github.com/moksha-hub/Atlassian-issue-Tracker-clone',
+  },
   {
     name: 'RenAIssance_OCR',
     category: 'OCR / Research',
@@ -142,40 +175,35 @@ export const repositories: RepositoryItem[] = [
     description: 'Open-source contribution work tied to a creative musical microworld platform.',
     link: 'https://github.com/moksha-hub/musicblocks',
   },
-  {
-    name: 'CNN-ML-project-for-Teachnook',
-    category: 'ML Foundations',
-    language: 'Python',
-    description: 'Early CNN experimentation that helped establish the ML foundation behind later work.',
-    link: 'https://github.com/moksha-hub/CNN-ML-project-for-Teachnook',
-  },
 ]
 
-export const experience = [
+export const experience: ExperienceItem[] = [
   {
+    company: 'Hands-on Machine Learning - IIT Roorkee',
+    role: 'ML Program Participant @',
     period: 'Apr 2024 - Jun 2024',
-    title: 'Hands-on Machine Learning - IIT Roorkee',
-    body: 'Improved CIFAR-10 CNN performance through augmentation and model tuning, strengthening practical intuition for experimentation, iteration, and model quality trade-offs.',
+    points: [
+      'Improved CIFAR-10 CNN performance through augmentation and model tuning, strengthening practical intuition for experimentation and model-quality trade-offs.',
+      'Built stronger hands-on understanding of iterative ML workflows, evaluation thinking, and deep learning implementation fundamentals.',
+    ],
   },
   {
+    company: 'Amrita Vishwa Vidyapeetham',
+    role: 'B.Tech in Computer Science Engineering @',
     period: 'Oct 2023 - Aug 2027',
-    title: 'B.Tech in Computer Science Engineering - Amrita Vishwa Vidyapeetham',
-    body: 'Building a technical foundation across software engineering, machine learning, and modern product development while expanding into full-stack and systems-oriented work.',
+    points: [
+      'Building a technical foundation across software engineering, machine learning, and modern product development.',
+      'Expanding into full-stack systems, backend architecture, open-source work, and AI-backed product workflows through project-led learning.',
+    ],
   },
 ]
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: 'Languages',
-    eyebrow: 'Core foundation',
-    summary: 'Comfortable across product-facing, systems-level, and data-oriented programming environments.',
-    items: ['Python', 'TypeScript', 'JavaScript', 'Rust', 'SQL', 'C', 'C++'],
-  },
-  {
     title: 'Frontend Engineering',
     eyebrow: 'Interface systems',
     summary: 'Modern interface work focused on clarity, responsiveness, animation quality, and premium visual presentation.',
-    items: ['React', 'HTML5', 'CSS', 'Framer Motion', 'Responsive UI systems', 'Component architecture', 'UI hierarchy', 'Interaction polish'],
+    items: ['React', 'HTML5', 'CSS', 'TypeScript', 'Framer Motion', 'Responsive UI systems', 'Component architecture', 'Interaction polish'],
   },
   {
     title: 'Backend & Product Systems',
@@ -193,7 +221,7 @@ export const skillGroups: SkillGroup[] = [
     title: 'Data, Tooling & Delivery',
     eyebrow: 'Execution layer',
     summary: 'Practical tooling and data capabilities that support shipping products, experiments, and deployable systems.',
-    items: ['MongoDB', 'MySQL', 'Git & GitHub', 'NoSQL principles', 'Evaluation metrics', 'Inference APIs', 'Gradio', 'Open-source collaboration'],
+    items: ['MongoDB', 'MySQL', 'Git & GitHub', 'Rust', 'SQL', 'Inference APIs', 'Evaluation metrics', 'Gradio', 'Open-source collaboration'],
   },
 ]
 
