@@ -175,25 +175,25 @@ export const skillGroups: SkillGroup[] = [
     title: 'Frontend',
     eyebrow: 'Interface systems',
     summary: 'Modern interface work focused on clarity, responsiveness, and premium visual presentation.',
-    items: ['React', 'HTML5', 'CSS', 'Responsive UI systems', 'Component architecture'],
+    items: ['React', 'HTML5', 'CSS', 'Responsive UI systems', 'Component architecture', 'Framer Motion', 'UI hierarchy'],
   },
   {
     title: 'Backend',
     eyebrow: 'Application logic',
     summary: 'Backend product development across APIs, authentication, data flow, and operational structure.',
-    items: ['Node.js', 'FastAPI', 'REST APIs', 'JWT auth', 'Appwrite', 'Hono'],
+    items: ['Node.js', 'FastAPI', 'REST APIs', 'JWT auth', 'Appwrite', 'Hono', 'API integration', 'CRUD workflows'],
   },
   {
     title: 'Machine Learning',
     eyebrow: 'Applied intelligence',
     summary: 'Hands-on ML work spanning NLP pipelines, retrieval systems, classical models, and deep learning.',
-    items: ['NLP preprocessing', 'TF-IDF', 'Logistic Regression', 'Naive Bayes', 'SVM', 'Random Forest', 'CNN', 'RAG pipelines'],
+    items: ['NLP preprocessing', 'TF-IDF', 'Logistic Regression', 'Naive Bayes', 'SVM', 'Random Forest', 'CNN', 'RAG pipelines', 'Cross-encoder reranking', 'OCR workflows'],
   },
   {
-    title: 'Data & Evaluation',
-    eyebrow: 'Decision support',
-    summary: 'Data-layer understanding that supports experimentation, ranking quality, model delivery, and evaluation.',
-    items: ['MongoDB', 'MySQL', 'NoSQL principles', 'Evaluation metrics', 'Inference APIs'],
+    title: 'Data, Tools & Deployment',
+    eyebrow: 'Execution layer',
+    summary: 'Practical tooling and data capabilities that support shipping products, experiments, and deployable systems.',
+    items: ['MongoDB', 'MySQL', 'Git & GitHub', 'NoSQL principles', 'Evaluation metrics', 'Inference APIs', 'Gradio', 'Open-source collaboration'],
   },
 ]
 
@@ -201,4 +201,5 @@ export const capabilityHighlights = [
   'Builds polished product interfaces without losing technical depth',
   'Able to move from ML experimentation into deployable full-stack systems',
   'Strong interest in systems tooling, AI-native workflows, and modern developer products',
+  'Comfortable turning project ideas into clean, usable, end-to-end builds',
 ]
